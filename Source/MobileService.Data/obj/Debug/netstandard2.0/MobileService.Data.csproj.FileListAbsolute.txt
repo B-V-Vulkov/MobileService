@@ -1,0 +1,9 @@
+C:\MobileService\Source\MobileService.Data\bin\Debug\netstandard2.0\MobileService.Data.deps.json
+C:\MobileService\Source\MobileService.Data\bin\Debug\netstandard2.0\MobileService.Data.dll
+C:\MobileService\Source\MobileService.Data\bin\Debug\netstandard2.0\MobileService.Data.pdb
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.csprojAssemblyReference.cache
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.csproj.CoreCompileInputs.cache
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.AssemblyInfoInputs.cache
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.AssemblyInfo.cs
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.dll
+C:\MobileService\Source\MobileService.Data\obj\Debug\netstandard2.0\MobileService.Data.pdb
