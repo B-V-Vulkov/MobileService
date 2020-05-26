@@ -19,4 +19,10 @@
     <ProjectReference Include="..\MobileService.Services\MobileService.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\resurses\home_page_background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

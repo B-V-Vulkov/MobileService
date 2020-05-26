@@ -5062,19 +5062,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vulko\\.nuget\\packages\\": {}
+    "C:\\Users\\b.vulkov\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MobileService\\Source\\MobileService\\MobileService.csproj",
+      "projectUniqueName": "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService\\MobileService.csproj",
       "projectName": "MobileService",
-      "projectPath": "C:\\MobileService\\Source\\MobileService\\MobileService.csproj",
-      "packagesPath": "C:\\Users\\vulko\\.nuget\\packages\\",
-      "outputPath": "C:\\MobileService\\Source\\MobileService\\obj\\",
+      "projectPath": "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService\\MobileService.csproj",
+      "packagesPath": "C:\\Users\\b.vulkov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\vulko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\b.vulkov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5087,11 +5091,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\MobileService\\Source\\MobileService.Data\\MobileService.Data.csproj": {
-              "projectPath": "C:\\MobileService\\Source\\MobileService.Data\\MobileService.Data.csproj"
+            "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService.Data\\MobileService.Data.csproj": {
+              "projectPath": "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService.Data\\MobileService.Data.csproj"
             },
-            "C:\\MobileService\\Source\\MobileService.Services\\MobileService.Services.csproj": {
-              "projectPath": "C:\\MobileService\\Source\\MobileService.Services\\MobileService.Services.csproj"
+            "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService.Services\\MobileService.Services.csproj": {
+              "projectPath": "C:\\Users\\b.vulkov\\Documents\\GitHub\\MobileService\\Source\\MobileService.Services\\MobileService.Services.csproj"
             }
           }
         }
@@ -5142,7 +5146,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

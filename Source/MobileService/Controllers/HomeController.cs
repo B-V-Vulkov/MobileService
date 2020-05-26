@@ -26,9 +26,9 @@ namespace MobileService.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var result = this.mapper.Map<UserViewModel>(await this.userService.GetUser());
+            //var result = this.mapper.Map<UserViewModel>(await this.userService.GetUser());
 
-            return View(result);
+            return View();
         }
 
         public IActionResult Privacy()
