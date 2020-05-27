@@ -49,7 +49,7 @@ a {
     font-size: 60px;
 }
 
-h1::after {
+.main-title::after {
     content: '';
     width: 80px;
     height: 3px;
@@ -58,6 +58,40 @@ h1::after {
     margin: 0.5em auto;
 }
 
-.test {
-    background-color: rgba(44, 163, 232, 0.1);
+.sub-title {
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+    .sub-title::after,
+    .sub-title::before {
+        content: '';
+        background: rgb(50, 160, 225);
+        display: inline-block;
+        vertical-align: middle;
+        height: 2px;
+    }
+
+    .sub-title::after {
+        margin-left: 0.5em;
+        width: 2em;
+    }
+
+    .sub-title::before {
+        margin-right: 0.5em;
+        width: 1em;
+    }
+
+.background-section {
+    background-color: rgba(50, 160, 225, 0.1);
+}
+
+.list-item {
+    display: flex;
+    margin-left: 20px;
+}
+
+.icone-list-item {
+    color: rgb(50, 160, 225);
+    margin-right: 5px;
 }
