@@ -9,7 +9,7 @@
     {
         public ServiceMappingProfile()
         {
-            this.CreateMap<User, UserServiceModel>();
+            //this.CreateMap<User, UserServiceModel>();
         }
     }
 }

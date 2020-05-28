@@ -38,7 +38,6 @@ namespace MobileService
                 typeof(ContrallerMappingProfile).Assembly);
 
             // Initialize Application Services
-            services.AddTransient<IUserService, UserService>();
             services.AddTransient<IOrderService, OrderService>();
         }
 
