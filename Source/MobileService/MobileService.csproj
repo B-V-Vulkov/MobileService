@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\resurses\home_page_background.jpg">
+    <Content Update="wwwroot\resurses\backgrounds\home_page_background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

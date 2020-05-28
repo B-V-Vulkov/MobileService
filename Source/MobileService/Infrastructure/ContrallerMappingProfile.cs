@@ -1,8 +1,8 @@
 ﻿namespace MobileService.Infrastructure
 {
     using AutoMapper;
-    using MobileService.Models;
     using MobileService.Services.Models;
+    using MobileService.ViewModels;
 
     public class ContrallerMappingProfile : Profile
     {

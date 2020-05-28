@@ -19,20 +19,19 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav mr-auto">
 
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Services">Services</a>
+                            <a class="nav-link" asp-controller="Services" asp-action="Index">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                            <a class="nav-link" asp-controller="Contacts" asp-action="Index">Contacts</a>
                         </li>
                     </ul>
-
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item float-right">
-                            <a class="nav-link" href="#">LogIn</a>
+                            <a class="nav-link" asp-controller="Order" asp-action="CheckOrder">Check Order</a>
                         </li>
                     </ul>
 
@@ -70,9 +69,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center" style="background-color: rgb(36, 41, 46);">
         <div class="container">
-            &copy; 2020 - MobileService - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Martina Stankova - 46036r
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

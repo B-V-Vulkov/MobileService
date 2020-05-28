@@ -1,4 +1,4 @@
-﻿namespace MobileService.Models
+﻿namespace MobileService.ViewModels
 {
     public class UserViewModel
     {

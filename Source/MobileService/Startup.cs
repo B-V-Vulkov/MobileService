@@ -10,6 +10,7 @@ namespace MobileService
 
     using MobileService.Data;
     using MobileService.Infrastructure;
+
     using MobileService.Services;
     using MobileService.Services.Contracts;
     using MobileService.Services.Infrastructure;
@@ -27,14 +28,18 @@ namespace MobileService
         {
             services.AddControllersWithViews();
 
+            // Initialize Application Data Base Context
             services.AddDbContext<MobileServiceDbContext>(
                options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
+            // Initialize Automapper Profiles
             services.AddAutoMapper(
                 typeof(ServiceMappingProfile).Assembly, 
                 typeof(ContrallerMappingProfile).Assembly);
 
+            // Initialize Application Services
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IOrderService, OrderService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -48,6 +53,7 @@ namespace MobileService
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
