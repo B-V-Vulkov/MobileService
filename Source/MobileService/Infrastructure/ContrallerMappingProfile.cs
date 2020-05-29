@@ -2,14 +2,14 @@
 {
     using AutoMapper;
 
-    using ViewModels;
-    using Services.Models;
+    using ViewModels.Order;
+    using Services.Models.Order;
 
     public class ContrallerMappingProfile : Profile
     {
         public ContrallerMappingProfile()
         {
-            this.CreateMap<UserServiceModel, UserViewModel>();
+            this.CreateMap<OrderServiceModel, OrderViewModel>();
         }
     }
 }

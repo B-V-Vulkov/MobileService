@@ -1,7 +1,9 @@
-﻿namespace MobileService.ViewModels.Order
+﻿namespace MobileService.Services.Models.Order
 {
-    public class OrderViewModel
+    public class OrderServiceModel
     {
+        public int OrderId { get; set; }
+
         public string OrderNumber { get; set; }
 
         public string CustomerName { get; set; }

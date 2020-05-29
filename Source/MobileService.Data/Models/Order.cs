@@ -12,14 +12,13 @@
 
         [Required]
         [MaxLength(8)]
-        public string OrderCode { get; set; }
+        [MinLength(8)]
+        public string OrderNumber { get; set; }
 
         [Required]
         [MaxLength(8)]
+        [MinLength(8)]
         public string OrderPassword { get; set; }
-
-        [Required]
-        public string Description { get; set; }
 
         public string RepairDescription { get; set; }
 
@@ -53,5 +52,10 @@
         public int RepairTypeId { get; set; }
 
         public RepairType RepairType { get; set; }
+
+        [Required]
+        public int StatusId { get; set; }
+
+        public OrderStatus Status { get; set; }
     }
 }

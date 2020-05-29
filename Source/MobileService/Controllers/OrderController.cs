@@ -1,49 +1,44 @@
 ﻿namespace MobileService.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using MobileService.Services.Contracts;
     using MobileService.ViewModels.Order;
+    using System.Threading.Tasks;
 
     public class OrderController : Controller
     {
-        // var result = this.mapper.Map<UserViewModel>(await this.userService.GetUser());
-
+        private readonly IMapper mapper;
         private readonly IOrderService orderService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IMapper mapper, IOrderService orderService)
         {
+            this.mapper = mapper;
             this.orderService = orderService;
         }
 
-        [HttpPost]
-        public IActionResult Index()
-        {
-
-
-            return View();
-        }
-
         [HttpGet]
-        public IActionResult CheckOrder()
+        public async Task<IActionResult> Index(int orderId)
         {
-            return View();
-        }
+            var order = await this.orderService.GetOrderAsync(orderId);
 
-        [HttpPost]
-        public IActionResult CheckOrder(OrderViewModel viewModel)
-        {
-            bool isExists = this.orderService.CheckOrder(viewModel.OrderId, viewModel.Password);
+            var viewModel = this.mapper.Map<OrderViewModel>(order);
 
-            if (!isExists)
-            {
-                return View(viewModel);
-            }
 
-            return View("");
+
+            //var model = new OrderViewModel() 
+            //{
+            //    OrderNumber = "122DDDDS12",
+            //    CustomerName = "Pesho Peshov Peshov",
+            //    CustomerEmail = "pedssds@dsdsdsd.com",
+            //    CustomerPhoneNumber = "232 2323 2323",
+            //    Device = "Iphone 6",
+            //    Repair = "Broken display",
+            //    Status = "Repaired",
+            //    RepairDescription = ""
+            //};
+
+            return View(viewModel);
         }
     }
 }

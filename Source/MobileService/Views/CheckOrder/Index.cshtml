@@ -1,0 +1,31 @@
+﻿@model MobileService.ViewModels.CheckOrder.CheckOrderViewModel
+@{
+    ViewData["Title"] = "Check Order";
+}
+<div class="form-background">
+    <div class="container" style="padding-bottom: calc(100vh - 430px);">
+        <div class=" form-container">
+            <h2>Check Order</h2>
+            <hr />
+            <form asp-controller="CheckOrder" asp-action="Index">
+                <div class="form-group">
+                    <label asp-for="OrderNumber" class="col-form-label">Order Number</label>
+                    <input asp-for="OrderNumber" class="form-control" placeholder="Enter your order number">
+                    <span asp-validation-for="OrderNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group ">
+                    <label asp-for="OrderPassword" class="col-form-label">Password</label>
+                    <input asp-for="OrderPassword" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="OrderPassword" class="text-danger"></span>
+                </div>
+                <div class="text-danger">@ViewBag.ErrorMessage</div>
+                <hr />
+                <button type="submit" class="btn btn-primary w-100">Check Order</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

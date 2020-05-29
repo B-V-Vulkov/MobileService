@@ -2,10 +2,12 @@
 {
     using System.Threading.Tasks;
 
-    using Models.Home;
+    using Models.Order;
 
     public interface IOrderService
     {
-        bool CheckOrder(int orderId, string password);
+        Task<int> GetOrderIdAsync(string orderNumber, string password);
+
+        Task<OrderServiceModel> GetOrderAsync(int orderId);
     }
 }

@@ -22,6 +22,8 @@
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+
         public DbSet<RepairPrice> RepairPrices { get; set; }
 
         public DbSet<RepairType> RepairTypes { get; set; }

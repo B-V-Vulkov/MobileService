@@ -42,7 +42,13 @@
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasIndex(i => i.OrderCode)
+                .HasOne(fk => fk.Status)
+                .WithMany(fk => fk.Orders)
+                .HasForeignKey(fk => fk.StatusId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .HasIndex(i => i.OrderNumber)
                 .IsUnique(false);
 
             builder
