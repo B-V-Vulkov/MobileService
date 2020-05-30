@@ -1,0 +1,79 @@
+﻿@model MobileService.ViewModels.Order.CreateOrderViewModel
+@{
+    ViewData["Title"] = "Create Order";
+}
+<div class="form-background">
+    <div class="container" style="padding-bottom: calc(100vh - 850px);">
+        <div class=" form-container">
+            <h2>Create Order</h2>
+
+            <h5>@this.ViewBag.SuccessMessage</h5>
+            <h5 class="text-danger">@this.ViewBag.ErrorMessage</h5>
+            @if (ViewBag.OrderNumber != null)
+            {
+                <div class="modal-container mb-0">
+                    <h6 class="modal-row-title">Number: </h6>
+                    <div class="modal-row-data">@ViewBag.OrderNumber</div>
+                </div>
+            }
+            @if (ViewBag.OrderPassword != null)
+            {
+                <div class="modal-container mb-0">
+                    <h6 class="modal-row-title">Password: </h6>
+                    <div class="modal-row-data">@ViewBag.OrderPassword</div>
+                </div>
+            }
+
+            <hr />
+            <form asp-controller="Order" asp-action="CreateOrder">
+                <div class="form-group">
+                    <label asp-for="DeviceModelId" class="col-form-label">Device Model</label>
+                    <select asp-for="DeviceModelId" asp-items="Model.DeviceModels" contextmenu="dsdsdssdsd" class="form-control"></select>
+                    <span asp-validation-for="DeviceModelId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RepairTypeId" class="col-form-label">Repair Type</label>
+                    <select asp-for="RepairTypeId" asp-items="Model.RepairTypes" class="form-control"></select>
+                    <span asp-validation-for="RepairTypeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ServiceWorkerId" class="col-form-label">Service Worker</label>
+                    <select asp-for="ServiceWorkerId" asp-items="Model.ServiceWorkers" class="form-control"></select>
+                    <span asp-validation-for="ServiceWorkerId" class="text-danger"></span>
+                </div>
+                <hr class="mt-4" />
+                <div class="form-group">
+                    <label asp-for="CustomerFirstName" class="col-form-label">Customer First Name</label>
+                    <input asp-for="CustomerFirstName" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="CustomerFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerMiddleName" class="col-form-label">Customer Middle Name</label>
+                    <input asp-for="CustomerMiddleName" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="CustomerMiddleName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerLastName" class="col-form-label">Customer Last Name</label>
+                    <input asp-for="CustomerLastName" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="CustomerLastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerEmail" class="col-form-label">Customer Email</label>
+                    <input asp-for="CustomerEmail" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerPhoneNumber" class="col-form-label">Customer Phone Number</label>
+                    <input asp-for="CustomerPhoneNumber" class="form-control" placeholder="Enter your password">
+                    <span asp-validation-for="CustomerPhoneNumber" class="text-danger"></span>
+                </div>
+                <hr />
+                <button asp-action="CreateOrder" asp-controller="Order" type="submit" class="btn btn-primary w-100">Create Order</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

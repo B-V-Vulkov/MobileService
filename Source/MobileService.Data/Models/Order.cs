@@ -25,8 +25,6 @@
         [Required]
         public DateTime OrderedOn { get; set; }
 
-        public DateTime? ReceivedForRepairOn { get; set; }
-
         public DateTime? RepairedOn { get; set; }
 
         [Required]

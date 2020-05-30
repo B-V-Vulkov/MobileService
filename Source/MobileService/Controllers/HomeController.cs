@@ -1,7 +1,6 @@
 ﻿namespace MobileService.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    using MobileService.Security;
 
     public class HomeController : Controller
     {

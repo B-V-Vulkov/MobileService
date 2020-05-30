@@ -1,6 +1,6 @@
 namespace MobileService
 {
-    using AutoMapper;
+    using Microsoft.AspNetCore.Authentication.Cookies;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -8,12 +8,13 @@ namespace MobileService
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
-    using MobileService.Data;
-    using MobileService.Infrastructure;
+    using AutoMapper;
 
-    using MobileService.Services;
-    using MobileService.Services.Contracts;
-    using MobileService.Services.Infrastructure;
+    using Data;
+    using Infrastructure;
+    using Services;
+    using Services.Contracts;
+    using Services.Infrastructure;
 
     public class Startup
     {
@@ -26,7 +27,18 @@ namespace MobileService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+            });
+
             services.AddControllersWithViews();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => 
+                {
+                    options.Cookie.Name = "ms_authentication";
+                });
 
             // Initialize Application Data Base Context
             services.AddDbContext<MobileServiceDbContext>(
@@ -39,6 +51,9 @@ namespace MobileService
 
             // Initialize Application Services
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IDeviceService, DeviceService>();
+            services.AddTransient<IRepairService, RepairService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,6 +73,7 @@ namespace MobileService
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

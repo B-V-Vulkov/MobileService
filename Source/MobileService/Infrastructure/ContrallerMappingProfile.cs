@@ -9,7 +9,11 @@
     {
         public ContrallerMappingProfile()
         {
-            this.CreateMap<OrderServiceModel, OrderViewModel>();
+            this.CreateMap<OrderServiceModel, DataOrderViewModel>();
+
+            this.CreateMap<ServiceWorkerOrderServiceModel, RepairOrderViewModel>();
+
+            this.CreateMap<CreateOrderViewModel, InsertOrderServiceModel>();
         }
     }
 }

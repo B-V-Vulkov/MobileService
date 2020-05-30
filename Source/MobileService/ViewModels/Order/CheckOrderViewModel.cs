@@ -1,4 +1,4 @@
-﻿namespace MobileService.ViewModels.CheckOrder
+﻿namespace MobileService.ViewModels.Order
 {
     using System.ComponentModel.DataAnnotations;
 

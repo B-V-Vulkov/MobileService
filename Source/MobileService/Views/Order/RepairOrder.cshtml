@@ -1,0 +1,44 @@
+﻿@model MobileService.ViewModels.Order.RepairOrderViewModel
+@{
+    ViewData["Title"] = "Repair Order";
+}
+<div class="form-background">
+    <div class="container" style="padding-bottom: calc(100vh - 400px);">
+        <div class=" form-container">
+            <h2>Repair Order</h2>
+            <hr />
+                <form asp-controller="Order" asp-action="RepairOrder">
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <div class="w-md-50">
+                            <div class="modal-container">
+                                <h6 class="modal-row-title">Custemor: </h6>
+                                <div class="modal-row-data">@Model.CustomerName</div>
+                            </div>
+                            <div class="modal-container">
+                                <h6 class="modal-row-title">Email: </h6>
+                                <div class="modal-row-data">@Model.CustomerEmail</div>
+                            </div>
+                        </div>
+                        <div class="w-md-50">
+                            <div class="modal-container">
+                                <h6 class="modal-row-title">Device: </h6>
+                                <div class="modal-row-data">@Model.Device</div>
+                            </div>
+                            <div class="modal-container">
+                                <h6 class="modal-row-title">Repair: </h6>
+                                <div class="modal-row-data">@Model.Repair></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-0" />
+                    <div class="form-group">
+                        <label asp-for="RepairDescription" class="col-form-label">Repair Description</label>
+                        <input asp-for="RepairDescription" class="form-control" placeholder="Enter your password">
+                        <span asp-validation-for="RepairDescription" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <button asp-action="RepairOrder" asp-controller="Order" asp-route-orderId="@Model.OrderId" asp-route-repairDescription="@Model.RepairDescription" type="submit" class="btn btn-primary w-100">Repair Order</button>
+                </form>
+        </div>
+    </div>
+</div>

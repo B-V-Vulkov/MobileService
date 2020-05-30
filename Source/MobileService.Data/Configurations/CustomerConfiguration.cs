@@ -10,10 +10,6 @@
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(key => key.CustomerId);
-
-            builder
-                .HasIndex(i => i.Email)
-                .IsUnique(true);
         }
     }
 }

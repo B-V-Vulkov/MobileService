@@ -9,7 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MobileService.CodeGenerator\MobileService.CodeGenerator.csproj" />
     <ProjectReference Include="..\MobileService.Data\MobileService.Data.csproj" />
+    <ProjectReference Include="..\MobileService.Security\MobileService.Security.csproj" />
   </ItemGroup>
 
 </Project>

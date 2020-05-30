@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileService.Data", "Mobil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileService.Services", "MobileService.Services\MobileService.Services.csproj", "{80FF3D83-12A6-4E2F-832F-AA017F56543C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileService.Security", "MobileService.Security\MobileService.Security.csproj", "{2D0BDBAD-8C20-4B43-916D-014C4CFCBFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileService.Security", "MobileService.Security\MobileService.Security.csproj", "{2D0BDBAD-8C20-4B43-916D-014C4CFCBFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileService.CodeGenerator", "MobileService.CodeGenerator\MobileService.CodeGenerator.csproj", "{56C9A6D1-B896-462C-B229-7112653319F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2D0BDBAD-8C20-4B43-916D-014C4CFCBFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D0BDBAD-8C20-4B43-916D-014C4CFCBFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D0BDBAD-8C20-4B43-916D-014C4CFCBFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C9A6D1-B896-462C-B229-7112653319F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C9A6D1-B896-462C-B229-7112653319F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C9A6D1-B896-462C-B229-7112653319F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C9A6D1-B896-462C-B229-7112653319F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

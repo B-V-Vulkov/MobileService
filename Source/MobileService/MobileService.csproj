@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MobileService.Data\MobileService.Data.csproj" />
-    <ProjectReference Include="..\MobileService.Security\MobileService.Security.csproj" />
     <ProjectReference Include="..\MobileService.Services\MobileService.Services.csproj" />
   </ItemGroup>
 

@@ -10,7 +10,7 @@ using MobileService.Data;
 namespace MobileService.Data.Migrations
 {
     [DbContext(typeof(MobileServiceDbContext))]
-    [Migration("20200529171004_Initialize")]
+    [Migration("20200530204230_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,9 +54,6 @@ namespace MobileService.Data.Migrations
                         .HasMaxLength(10);
 
                     b.HasKey("CustomerId");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.ToTable("Customers");
                 });
@@ -166,9 +163,6 @@ namespace MobileService.Data.Migrations
                         .HasMaxLength(8);
 
                     b.Property<DateTime>("OrderedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ReceivedForRepairOn")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ReceptionistId")

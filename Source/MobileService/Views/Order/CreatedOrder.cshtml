@@ -1,0 +1,30 @@
+﻿@model MobileService.ViewModels.Order.CreatedOrderViewModel
+@{
+    ViewData["Title"] = "Created Order";
+}
+<div class="form-background">
+    <div class="container" style="padding-bottom: calc(100vh - 200px);">
+        <div class=" form-container">
+            <h2>Created Order</h2>
+            <hr />
+            <h5>You successfully create a new order</h5>
+            <hr />
+            <div class="modal-container mb-0">
+                <h6 class="modal-row-title">Number: </h6>
+                <div class="modal-row-data">@Model.OrderNumber</div>
+            </div>
+            <div class="modal-container mb-0">
+                <h6 class="modal-row-title">Password: </h6>
+                <div class="modal-row-data">@Model.OrderPassword</div>
+            </div>
+            <hr />
+            <div class="modal-container mb-0">
+                <h6 class="modal-row-title">Price: </h6>
+                <div class="modal-row-data">@Model.OrderPrice $</div>
+            </div>
+
+            <hr />
+            <a class="btn btn-primary w-100" asp-controller="Order" asp-action="CreateOrder">Create Another Order</a>
+        </div>
+    </div>
+</div>

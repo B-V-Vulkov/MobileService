@@ -6,8 +6,12 @@
 
     public interface IOrderService
     {
-        Task<int> GetOrderIdAsync(string orderNumber, string password);
+        Task<OrderServiceModel> GetOrderAsync(string orderNumber, string password);
 
-        Task<OrderServiceModel> GetOrderAsync(int orderId);
+        Task<ServiceWorkerOrderServiceModel> GetServiceWorkerOrderAsync(int serviceWorkerId);
+
+        Task<CreatedOrderDataServiceModel> InsertOrderAsync(InsertOrderServiceModel insertOrder);
+
+        Task InsertRepairOrderAsync(InsertRepairOrderServiceModel insertRepairOrder);
     }
 }

@@ -135,7 +135,6 @@ namespace MobileService.Data.Migrations
                     OrderPassword = table.Column<string>(maxLength: 8, nullable: false),
                     RepairDescription = table.Column<string>(nullable: true),
                     OrderedOn = table.Column<DateTime>(nullable: false),
-                    ReceivedForRepairOn = table.Column<DateTime>(nullable: true),
                     RepairedOn = table.Column<DateTime>(nullable: true),
                     CustomerId = table.Column<int>(nullable: false),
                     ReceptionistId = table.Column<int>(nullable: false),
@@ -184,12 +183,6 @@ namespace MobileService.Data.Migrations
                         principalColumn: "OrderStatusId",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customers_Email",
-                table: "Customers",
-                column: "Email",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_Email",

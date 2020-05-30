@@ -53,9 +53,6 @@ namespace MobileService.Data.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
-
                     b.ToTable("Customers");
                 });
 
@@ -164,9 +161,6 @@ namespace MobileService.Data.Migrations
                         .HasMaxLength(8);
 
                     b.Property<DateTime>("OrderedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ReceivedForRepairOn")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ReceptionistId")
