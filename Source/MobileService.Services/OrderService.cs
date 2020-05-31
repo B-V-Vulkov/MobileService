@@ -1,5 +1,7 @@
 ﻿namespace MobileService.Services
 {
+    using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
 
@@ -7,14 +9,11 @@
     using AutoMapper.QueryableExtensions;
 
     using Data;
+    using Data.Models;
     using Contracts;
     using Models.Order;
-    using MobileService.Data.Models;
-    using System;
-    using System.Linq;
 
     using static CodeGenerator.OrderCodeGenerator;
-    using Microsoft.EntityFrameworkCore.Internal;
 
     public class OrderService : IOrderService
     {

@@ -22,6 +22,7 @@
             if (!this.roles.Any(x => x == role))
             {
                 context.HttpContext.Response.Redirect("/Home/Index");
+                return;
             }
 
             await next();

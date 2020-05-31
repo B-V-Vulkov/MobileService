@@ -6,29 +6,12 @@
     <div class="container" style="padding-bottom: calc(100vh - 850px);">
         <div class=" form-container">
             <h2>Create Order</h2>
-
-            <h5>@this.ViewBag.SuccessMessage</h5>
-            <h5 class="text-danger">@this.ViewBag.ErrorMessage</h5>
-            @if (ViewBag.OrderNumber != null)
-            {
-                <div class="modal-container mb-0">
-                    <h6 class="modal-row-title">Number: </h6>
-                    <div class="modal-row-data">@ViewBag.OrderNumber</div>
-                </div>
-            }
-            @if (ViewBag.OrderPassword != null)
-            {
-                <div class="modal-container mb-0">
-                    <h6 class="modal-row-title">Password: </h6>
-                    <div class="modal-row-data">@ViewBag.OrderPassword</div>
-                </div>
-            }
-
+            <h5 class="text-danger">@ViewBag.ErrorMessage</h5>
             <hr />
             <form asp-controller="Order" asp-action="CreateOrder">
                 <div class="form-group">
                     <label asp-for="DeviceModelId" class="col-form-label">Device Model</label>
-                    <select asp-for="DeviceModelId" asp-items="Model.DeviceModels" contextmenu="dsdsdssdsd" class="form-control"></select>
+                    <select asp-for="DeviceModelId" asp-items="Model.DeviceModels" class="form-control"></select>
                     <span asp-validation-for="DeviceModelId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -73,7 +56,6 @@
         </div>
     </div>
 </div>
-
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

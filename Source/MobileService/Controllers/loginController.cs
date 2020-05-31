@@ -1,24 +1,26 @@
 ﻿namespace MobileService.Controllers
 {
-    using Microsoft.AspNetCore.Authentication;
-    using Microsoft.AspNetCore.Authentication.Cookies;
-    using Microsoft.AspNetCore.Mvc;
-    using MobileService.Services.Contracts;
-    using MobileService.ViewModels.Login;
     using System;
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Authentication.Cookies;
+    using Microsoft.AspNetCore.Mvc;
 
-    public class loginController : Controller
+    using ViewModels.Login;
+    using Services.Contracts;
+
+    public class LoginController : Controller
     {
         private readonly IEmployeeService employeeService;
 
-        public loginController(IEmployeeService employeeService)
+        public LoginController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -34,8 +36,16 @@
 
                 await this.SetAuthenticationCookieAsync(employee.EmployeeId, employee.Role);
 
-                // redirect
-                return View();
+                if (employee.Role == "Receptionist")
+                {
+                    return RedirectToAction("CreateOrder", "Order");
+                }
+                else if (employee.Role == "ServiceWorker")
+                {
+                    return RedirectToAction("RepairOrder", "Order");
+                }
+
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception)
             {
@@ -57,10 +67,5 @@
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
         }
-
-        //private async void ResetAuthenticationCookieAsync()
-        //{
-
-        //}
     }
 }

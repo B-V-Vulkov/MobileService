@@ -1,18 +1,16 @@
 ﻿namespace MobileService.Controllers
 {
-    using AutoMapper;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Mvc.Rendering;
-    using Microsoft.EntityFrameworkCore.Internal;
-    using MobileService.Services.Contracts;
-    using MobileService.Services.Models.Device;
-    using MobileService.Services.Models.Order;
-    using MobileService.ViewModels.Order;
     using System;
-
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
+    using AutoMapper;
+
+    using ViewModels.Order;
+    using Services.Contracts;
+    using Services.Models.Order;
 
     public class OrderController : Controller
     {

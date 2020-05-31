@@ -64,7 +64,8 @@ namespace MobileService
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                // TODO: Add Error page
+                app.UseExceptionHandler("/Home/Index");
                 app.UseHsts();
             }
 

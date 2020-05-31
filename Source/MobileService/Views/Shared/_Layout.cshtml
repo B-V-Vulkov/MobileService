@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top pt-0 pb-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top pt-0 pb-0">
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">Mobile Service</a>
                 <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,57 +28,39 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Contacts" asp-action="Index">Contacts</a>
                         </li>
-
-                        @if (this.User.IsInRole("Administrator"))
+                        @if (this.User.IsInRole("Admin") || this.User.IsInRole("Receptionist"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Contacts" asp-action="Index">TEST</a>
+                                <a class="nav-link" asp-controller="Order" asp-action="CreateOrder">Create Order</a>
                             </li>
                         }
-
+                        @if (this.User.IsInRole("Admin") || this.User.IsInRole("ServiceWorker"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Order" asp-action="RepairOrder">Repair Order</a>
+                            </li>
+                        }
+                        @if (this.User.IsInRole("Admin") || this.User.IsInRole("Receptionist") || this.User.IsInRole("ServiceWorker"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Logout" asp-action="Index">Logout</a>
+                            </li>
+                        }
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item float-right">
                             <a class="nav-link" asp-controller="Order" asp-action="CheckOrder">Check Order</a>
                         </li>
                     </ul>
-
-
-
-
                 </div>
             </div>
         </nav>
-
-        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MobileService</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>*@
-
-
-
     </header>
     <div>
         <main role="main">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted text-center" style="background-color: rgb(36, 41, 46);">
         <div class="container">
             &copy; 2020 - Martina Stankova - 46036r

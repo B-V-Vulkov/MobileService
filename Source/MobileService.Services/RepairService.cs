@@ -1,8 +1,9 @@
 ﻿namespace MobileService.Services
 {
+    using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
 
     using AutoMapper;
     using AutoMapper.QueryableExtensions;
@@ -10,7 +11,6 @@
     using Data;
     using Contracts;
     using Models.Repair;
-    using System.Linq;
 
     public class RepairService : IRepairService
     {
